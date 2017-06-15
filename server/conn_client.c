@@ -57,7 +57,7 @@ void *connect_client(void *arg){
     server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     bind(socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr));
-    listen(socket_fd, 128);
+    listen(socket_fd, 20);
 
     int connect_fd;
     socklen_t client_len;
@@ -71,6 +71,7 @@ void *connect_client(void *arg){
         player_exist = false;
         
         connect_fd = accept(socket_fd, (struct sockaddr*)&client_addr, &client_len);
+    
         for(i = 0; i < MAX_PLAYER; i++){
             if(players[i].is_using == true && players[i].address == client_addr.sin_addr.s_addr){
                 players[i].score = 0;
