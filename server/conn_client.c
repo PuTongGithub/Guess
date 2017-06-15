@@ -56,6 +56,7 @@ void *connect_client(void *arg){
     server_addr.sin_port = htons(CONN_PORT);
     server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
+    socket_fd = socket(AF_INET, SOCK_STREAM, 0);
     bind(socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr));
     listen(socket_fd, 20);
 
