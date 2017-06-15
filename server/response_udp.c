@@ -1,7 +1,10 @@
 #include"server.h"
 
+void write_report(int report_fd, char* message);
+
 void *broadcast_response(void *arg){
     extern Player players[MAX_PLAYER];
+    extern int report_fd;
     int i;
     for(i = 0; i < MAX_PLAYER; i++){
         players[i].is_using = false;
@@ -25,6 +28,7 @@ void *broadcast_response(void *arg){
     socklen_t client_sockaddr_len;
     char message[MAX_MES_LEN];
     int new_player_id;
+    char report_message[MAX_REPORT_MAS_LEN];
 
     while(true){
         new_player_id = -1;
@@ -33,8 +37,6 @@ void *broadcast_response(void *arg){
         bzero(&client_addr, sizeof(client_addr));
 
         recvfrom(socket_fd, message, MAX_MES_LEN, 0, (struct sockaddr*)&client_addr, &client_sockaddr_len);
-
-        printf("receive message:%s\n",message);
 
         for(i = 0; i < MAX_PLAYER; i++){
             if(!players[i].is_using){
@@ -46,13 +48,14 @@ void *broadcast_response(void *arg){
         }
 
         if(new_player_id == -1){
+            sprintf(report_message, "receive:%s reply:%s", message, player_full_message);
             strcpy(message, player_full_message);
-            printf("player full...\n");
         }
         else{
+            sprintf(report_message, "receive:%s reply:%d", message, new_player_id);
             sprintf(message, "%d", new_player_id);
-            printf("new player:%s\nplayer id:%d\n", players[new_player_id].name, new_player_id);
         }
         sendto(socket_fd, message, strlen(message), 0, (struct sockaddr*)&client_addr, client_sockaddr_len);
+        write_report(report_fd, report_message);
     }
 }
