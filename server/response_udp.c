@@ -1,6 +1,6 @@
 #include"server.h"
 
-void write_report(int report_fd, char* message);
+void write_report(char* message);
 
 void *broadcast_response(void *arg){
     extern Player players[MAX_PLAYER];
@@ -10,6 +10,8 @@ void *broadcast_response(void *arg){
         players[i].is_using = false;
         players[i].connect_fd = NO_CONN;
         players[i].score = 0;
+        players[i].state = no_player;
+        players[i].address = INADDR_ANY;
     }
 
     int socket_fd;
@@ -19,7 +21,7 @@ void *broadcast_response(void *arg){
 
     bzero(&server_addr, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(SERV_PORT);
+    server_addr.sin_port = htons(BROA_PORT);
     server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     bind(socket_fd, (struct sockaddr*)&server_addr, sizeof(server_addr));
@@ -30,7 +32,7 @@ void *broadcast_response(void *arg){
     int new_player_id;
     char report_message[MAX_REPORT_MAS_LEN];
 
-    while(true){
+    while(1){
         new_player_id = -1;
         client_sockaddr_len = sizeof(client_addr);
         bzero(message, sizeof(message));
@@ -43,19 +45,20 @@ void *broadcast_response(void *arg){
                 new_player_id = i;
                 players[i].is_using = true;
                 strcpy(players[i].name, message);
+                players[i].address = client_addr.sin_addr.s_addr;
                 break;
             }
         }
 
         if(new_player_id == -1){
-            sprintf(report_message, "receive:%s reply:%s", message, player_full_message);
+            sprintf(report_message, "udp receive:%s reply:%s", message, player_full_message);
             strcpy(message, player_full_message);
         }
         else{
-            sprintf(report_message, "receive:%s reply:%d", message, new_player_id);
+            sprintf(report_message, "udp receive:%s reply:%d", message, new_player_id);
             sprintf(message, "%d", new_player_id);
         }
         sendto(socket_fd, message, strlen(message), 0, (struct sockaddr*)&client_addr, client_sockaddr_len);
-        write_report(report_fd, report_message);
+        write_report(report_message);
     }
 }
