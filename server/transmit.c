@@ -54,3 +54,60 @@ void send_old_players(int player_id){
         }
     }
 }
+
+void send_leave_message(int id){
+    char message[MAX_MES_LEN];
+    char data_message[MAX_DATA_MES_LEN];
+    
+    close(players[id].connect_fd);
+
+    players[id].is_using = false;
+    players[id].score = 0;
+    players[id].connect_fd = NO_CONN;
+    players[id].state = no_player;
+
+    sprintf(data_message, message_data_mode[4], id);
+    sprintf(message, message_main_mode, 0, 5, data_message);
+    tell_others_sth(id, message);
+}
+
+void transmit_message(int id, char *data){
+    char message[MAX_MES_LEN];
+
+    //char data_message[MAX_DATA_MES_LEN];
+    //word judge
+    //sprintf(data_message, message_data_mode[1], id, data);
+
+    sprintf(message, message_main_mode, id, 2, data);
+    tell_others_sth(id, message);
+    printf("player:%d message:%s\n", id, data);
+}
+
+void execute_message(int id, char *message){
+    pthread_t pid;
+    int sourse_id = message[0] - '0';
+    int data_type = message[2] - '0';
+    char *data = str_sub(message, 4);
+    switch(data_type){
+        case 2:transmit_message(sourse_id, data); break;
+        case 3:break;   //ink_data
+        case 4:break;   //game_contral
+        default:break;
+    }
+}
+
+void processing_message(int id, char *message){
+    if(strcmp(message, "close") == 0){
+        send_leave_message(id);
+        printf("player:%d, bey!\n", id);
+        return;
+    }
+    int end_pos = str_index_of(message, '^');
+    char *sub;
+    while(end_pos != -1){
+        sub = str_subn(message, 0, end_pos);
+        execute_message(id, sub);
+        message = str_sub(message, end_pos + 1);
+        end_pos = str_index_of(message, '^');
+    }
+}

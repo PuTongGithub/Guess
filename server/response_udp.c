@@ -1,7 +1,6 @@
 #include"server.h"
 
 extern Player players[MAX_PLAYER];
-extern int report_fd;
 
 void write_report(char* message);
 
