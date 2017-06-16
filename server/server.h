@@ -10,6 +10,7 @@
 #include<malloc.h>
 #include<fcntl.h>
 #include<sys/stat.h>
+
 #define BROA_PORT 1106
 #define CONN_PORT 1107
 
@@ -37,3 +38,9 @@ typedef struct{
 }Player;
 
 static char player_full_message[] = "player_full";
+static char message_main_mode[] = "%d&%d&%s^";     //sourse_di&data_type&data\0
+static char message_data_mode[][12] = {"%d#%d#%d#%s",   //1 id#state#score#name
+                                        "%d#%s:%s",     //2 id#name:message
+                                        "%d#%s",        //3 id#ink_data
+                                        "%d#%d#%s",     //4 id#type#data 1#start 2#score 3#message
+                                        "%d"};          //5 leave_id

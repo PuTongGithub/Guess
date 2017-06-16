@@ -1,0 +1,234 @@
+Thu Jun 15 22:15:21 2017
+    udp receive:bac reply:0
+Thu Jun 15 22:15:21 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Thu Jun 15 22:15:21 2017
+    tcp send message to others. sourse:0 message:0#0#0#bac
+Thu Jun 15 22:55:05 2017
+    udp receive:sdf reply:0
+Thu Jun 15 22:55:05 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Thu Jun 15 22:55:05 2017
+    tcp send message to others. sourse:0 message:&0&1&0#0#0#sdf
+Thu Jun 15 22:55:16 2017
+    udp receive:dfdf reply:1
+Thu Jun 15 22:55:17 2017
+    tcp connect client. ip:192.168.1.101 id:1
+Thu Jun 15 22:55:17 2017
+    tcp send message to others. sourse:1 message:&1&1&1#0#0#dfdf
+Thu Jun 15 22:55:17 2017
+    tcp send message to someone. target:1 message:&1&1&0#0#0#sdf
+Thu Jun 15 22:55:56 2017
+    udp receive:dfd reply:0
+Thu Jun 15 22:55:56 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Thu Jun 15 22:55:56 2017
+    tcp send message to others. sourse:0 message:0&1&0#0#0#dfd
+Thu Jun 15 22:56:03 2017
+    udp receive:sfs reply:1
+Thu Jun 15 22:56:03 2017
+    tcp connect client. ip:192.168.1.101 id:1
+Thu Jun 15 22:56:03 2017
+    tcp send message to others. sourse:1 message:1&1&1#0#0#sfs
+Thu Jun 15 22:56:03 2017
+    tcp send message to someone. target:1 message:1&1&0#0#0#dfd
+Thu Jun 15 22:56:22 2017
+    udp receive:help reply:2
+Thu Jun 15 22:56:22 2017
+    tcp connect client. ip:192.168.1.101 id:2
+Thu Jun 15 22:57:13 2017
+    udp receive:dfd reply:0
+Thu Jun 15 22:57:25 2017
+    udp receive:asdf reply:1
+Thu Jun 15 22:58:40 2017
+    udp receive:123 reply:0
+Thu Jun 15 22:58:40 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Thu Jun 15 22:58:40 2017
+    tcp send message to others. sourse:0 message:0&1&0#0#0#123
+Thu Jun 15 22:58:48 2017
+    udp receive:asdf reply:1
+Thu Jun 15 22:58:48 2017
+    tcp connect client. ip:192.168.1.101 id:1
+Thu Jun 15 22:58:48 2017
+    tcp send message to others. sourse:1 message:1&1&1#0#0#asdf
+Thu Jun 15 22:58:48 2017
+    tcp send message to someone. target:1 message:1&1&0#0#0#123
+Thu Jun 15 22:58:57 2017
+    udp receive:ddd reply:2
+Thu Jun 15 22:58:57 2017
+    tcp connect client. ip:192.168.1.101 id:2
+Thu Jun 15 23:02:01 2017
+    udp receive:dfd reply:0
+Thu Jun 15 23:02:01 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Thu Jun 15 23:02:01 2017
+    tcp send message to others. sourse:0 message:0&1&0#0#0#dfd
+Thu Jun 15 23:02:11 2017
+    udp receive:323 reply:1
+Thu Jun 15 23:02:11 2017
+    tcp connect client. ip:192.168.1.101 id:1
+Thu Jun 15 23:02:11 2017
+    tcp send message to others. sourse:1 message:1&1&1#0#0#323
+Thu Jun 15 23:02:11 2017
+    tcp send message to someone. target:1 message:1&1&0#0#0#dfd
+Thu Jun 15 23:02:22 2017
+    udp receive:fdd reply:2
+Thu Jun 15 23:02:22 2017
+    tcp connect client. ip:192.168.1.101 id:2
+Thu Jun 15 23:10:16 2017
+    udp receive:dfd reply:0
+Thu Jun 15 23:10:16 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Thu Jun 15 23:10:16 2017
+    tcp send message to others. sourse:0 message:0&1&0#0#0#dfd
+Thu Jun 15 23:10:28 2017
+    udp receive:ddd reply:1
+Thu Jun 15 23:10:28 2017
+    tcp connect client. ip:192.168.1.101 id:1
+Thu Jun 15 23:10:28 2017
+    tcp send message to others. sourse:1 message:1&1&1#0#0#ddd
+Thu Jun 15 23:10:28 2017
+    tcp send message to someone. target:1 message:1&1&0#0#0#dfd
+Thu Jun 15 23:10:38 2017
+    udp receive:dsfs reply:2
+Thu Jun 15 23:10:38 2017
+    tcp connect client. ip:192.168.1.101 id:2
+Thu Jun 15 23:10:38 2017
+    tcp send message to others. sourse:2 message:2&1&2#0#0#dsfs
+Thu Jun 15 23:10:38 2017
+    tcp send message to someone. target:2 message:2&1&0#0#0#dfd
+Thu Jun 15 23:10:38 2017
+    tcp send message to someone. target:2 message:2&1&1#0#0#ddd
+Thu Jun 15 23:10:48 2017
+    udp receive:369 reply:3
+Thu Jun 15 23:10:48 2017
+    tcp connect client. ip:192.168.1.101 id:3
+Thu Jun 15 23:10:48 2017
+    tcp send message to others. sourse:3 message:3&1&3#0#0#369
+Thu Jun 15 23:10:48 2017
+    tcp send message to someone. target:3 message:3&1&0#0#0#dfd
+Thu Jun 15 23:10:48 2017
+    tcp send message to someone. target:3 message:3&1&1#0#0#ddd
+Thu Jun 15 23:10:48 2017
+    tcp send message to someone. target:3 message:3&1&2#0#0#dsfs
+Thu Jun 15 23:11:04 2017
+    udp receive:sdf reply:4
+Thu Jun 15 23:11:04 2017
+    tcp connect client. ip:192.168.1.101 id:4
+Thu Jun 15 23:11:04 2017
+    tcp send message to others. sourse:4 message:4&1&4#0#0#sdf
+Thu Jun 15 23:11:04 2017
+    tcp send message to someone. target:4 message:4&1&0#0#0#dfd
+Thu Jun 15 23:11:04 2017
+    tcp send message to someone. target:4 message:4&1&1#0#0#ddd
+Thu Jun 15 23:11:04 2017
+    tcp send message to someone. target:4 message:4&1&2#0#0#dsfs
+Thu Jun 15 23:11:04 2017
+    tcp send message to someone. target:4 message:4&1&3#0#0#369
+Thu Jun 15 23:11:13 2017
+    udp receive:dfd reply:5
+Thu Jun 15 23:11:13 2017
+    tcp connect client. ip:192.168.1.101 id:5
+Thu Jun 15 23:11:13 2017
+    tcp send message to others. sourse:5 message:5&1&5#0#0#dfd
+Thu Jun 15 23:11:13 2017
+    tcp send message to someone. target:5 message:5&1&0#0#0#dfd
+Thu Jun 15 23:11:13 2017
+    tcp send message to someone. target:5 message:5&1&1#0#0#ddd
+Thu Jun 15 23:11:13 2017
+    tcp send message to someone. target:5 message:5&1&2#0#0#dsfs
+Thu Jun 15 23:11:13 2017
+    tcp send message to someone. target:5 message:5&1&3#0#0#369
+Thu Jun 15 23:11:13 2017
+    tcp send message to someone. target:5 message:5&1&4#0#0#sdf
+Thu Jun 15 23:12:47 2017
+    udp receive:dfd reply:player_full
+Thu Jun 15 23:13:11 2017
+    udp receive:ddd reply:0
+Thu Jun 15 23:14:29 2017
+    udp receive:dfd reply:0
+Thu Jun 15 23:14:29 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Thu Jun 15 23:14:29 2017
+    tcp send message to others. sourse:0 message:0&1&0#0#0#dfd
+Thu Jun 15 23:14:35 2017
+    udp receive:dfd reply:1
+Thu Jun 15 23:14:35 2017
+    tcp connect client. ip:192.168.1.101 id:1
+Thu Jun 15 23:14:35 2017
+    tcp send message to others. sourse:1 message:1&1&1#0#0#dfd
+Thu Jun 15 23:14:35 2017
+    tcp send message to someone. target:1 message:1&1&0#0#0#dfd
+Thu Jun 15 23:14:44 2017
+    udp receive:ddd reply:2
+Thu Jun 15 23:14:44 2017
+    tcp connect client. ip:192.168.1.101 id:2
+Thu Jun 15 23:14:44 2017
+    tcp send message to others. sourse:2 message:2&1&2#0#0#ddd
+Thu Jun 15 23:14:44 2017
+    tcp send message to someone. target:2 message:2&1&0#0#0#dfd
+Thu Jun 15 23:14:44 2017
+    tcp send message to someone. target:2 message:2&1&1#0#0#dfd
+Thu Jun 15 23:14:53 2017
+    udp receive:aaa reply:3
+Thu Jun 15 23:14:53 2017
+    tcp connect client. ip:192.168.1.101 id:3
+Thu Jun 15 23:14:53 2017
+    tcp send message to others. sourse:3 message:3&1&3#0#0#aaa
+Thu Jun 15 23:14:53 2017
+    tcp send message to someone. target:3 message:3&1&0#0#0#dfd
+Thu Jun 15 23:14:53 2017
+    tcp send message to someone. target:3 message:3&1&1#0#0#dfd
+Thu Jun 15 23:14:53 2017
+    tcp send message to someone. target:3 message:3&1&2#0#0#ddd
+Thu Jun 15 23:15:43 2017
+    udp receive:dfd reply:4
+Thu Jun 15 23:15:43 2017
+    tcp connect client. ip:192.168.1.101 id:4
+Thu Jun 15 23:15:43 2017
+    tcp send message to others. sourse:4 message:4&1&4#0#0#dfd
+Thu Jun 15 23:15:43 2017
+    tcp send message to someone. target:4 message:4&1&0#0#0#dfd
+Thu Jun 15 23:15:43 2017
+    tcp send message to someone. target:4 message:4&1&1#0#0#dfd
+Thu Jun 15 23:15:43 2017
+    tcp send message to someone. target:4 message:4&1&2#0#0#ddd
+Thu Jun 15 23:15:43 2017
+    tcp send message to someone. target:4 message:4&1&3#0#0#aaa
+Thu Jun 15 23:26:19 2017
+    udp receive:dfs reply:0
+Thu Jun 15 23:26:19 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Thu Jun 15 23:26:19 2017
+    tcp send message to others. sourse:0 message:0&1&0#0#0#dfs
+Thu Jun 15 23:26:26 2017
+    udp receive:adf reply:1
+Thu Jun 15 23:26:26 2017
+    tcp connect client. ip:192.168.1.101 id:1
+Thu Jun 15 23:26:26 2017
+    tcp send message to others. sourse:1 message:1&1&1#0#0#adf
+Thu Jun 15 23:26:26 2017
+    tcp send message to someone. target:1 message:1&1&0#0#0#dfs
+Thu Jun 15 23:26:32 2017
+    udp receive:ddd reply:2
+Thu Jun 15 23:26:32 2017
+    tcp connect client. ip:192.168.1.101 id:2
+Thu Jun 15 23:26:32 2017
+    tcp send message to others. sourse:2 message:2&1&2#0#0#ddd
+Thu Jun 15 23:26:32 2017
+    tcp send message to someone. target:2 message:2&1&0#0#0#dfs
+Thu Jun 15 23:26:32 2017
+    tcp send message to someone. target:2 message:2&1&1#0#0#adf
+Thu Jun 15 23:26:38 2017
+    udp receive:sdf reply:3
+Thu Jun 15 23:26:38 2017
+    tcp connect client. ip:192.168.1.101 id:3
+Thu Jun 15 23:26:38 2017
+    tcp send message to others. sourse:3 message:3&1&3#0#0#sdf
+Thu Jun 15 23:26:38 2017
+    tcp send message to someone. target:3 message:3&1&0#0#0#dfs
+Thu Jun 15 23:26:38 2017
+    tcp send message to someone. target:3 message:3&1&1#0#0#adf
+Thu Jun 15 23:26:38 2017
+    tcp send message to someone. target:3 message:3&1&2#0#0#ddd

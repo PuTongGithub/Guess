@@ -1,10 +1,11 @@
 #include"server.h"
 
+extern Player players[MAX_PLAYER];
+extern int report_fd;
+
 void write_report(char* message);
 
 void *broadcast_response(void *arg){
-    extern Player players[MAX_PLAYER];
-    extern int report_fd;
     int i;
     for(i = 0; i < MAX_PLAYER; i++){
         players[i].is_using = false;
@@ -51,11 +52,13 @@ void *broadcast_response(void *arg){
         }
 
         if(new_player_id == -1){
-            sprintf(report_message, "udp receive:%s reply:%s", message, player_full_message);
+            printf("udp receive:%s reply:%s ip:%s\n", message, player_full_message, inet_ntoa(client_addr.sin_addr));
+            sprintf(report_message, "udp receive:%s reply:%s ip:%s", message, player_full_message, inet_ntoa(client_addr.sin_addr));
             strcpy(message, player_full_message);
         }
         else{
-            sprintf(report_message, "udp receive:%s reply:%d", message, new_player_id);
+            printf("udp receive:%s reply:%d ip:%s\n", message, new_player_id, inet_ntoa(client_addr.sin_addr));
+            sprintf(report_message, "udp receive:%s reply:%d ip:%s", message, new_player_id, inet_ntoa(client_addr.sin_addr));
             sprintf(message, "%d", new_player_id);
         }
         sendto(socket_fd, message, strlen(message), 0, (struct sockaddr*)&client_addr, client_sockaddr_len);
