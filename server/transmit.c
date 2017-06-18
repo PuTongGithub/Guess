@@ -1,14 +1,16 @@
 #include"server.h"
 
 extern Player players[MAX_PLAYER];
+extern char current_word[20];
+static int played_id = -1;
 
 void write_report(char* message);
+char *choose_word();
 
 void tell_sb_sth(int player_id, char* message){
     char report_message[MAX_REPORT_MAS_LEN];
     if(players[player_id].is_using == true){
         write(players[player_id].connect_fd, message, strlen(message));
-        fsync(players[player_id].connect_fd);
         sprintf(report_message, "tcp send message to someone. target:%d message:%s", player_id, message);
         write_report(report_message);
     }
@@ -20,7 +22,6 @@ void tell_others_sth(int sourse_id, char* message){
     for(i = 0; i < MAX_PLAYER; i++){
         if(i != sourse_id && players[i].is_using == true){
             write(players[i].connect_fd, message, strlen(message));
-            fsync(players[i].connect_fd);
         }
     }
     sprintf(report_message, "tcp send message to others. sourse:%d message:%s", sourse_id, message);
@@ -71,16 +72,101 @@ void send_leave_message(int id){
     tell_others_sth(id, message);
 }
 
+void game_right(int id){
+    char message[MAX_MES_LEN];
+    char data_message[MAX_DATA_MES_LEN];
+    char score[5];
+
+    if(players[id].state == gaming){
+        players[id].state = not_ready;
+        players[id].score++;
+
+        sprintf(score, "%d", players[id].score); 
+        sprintf(data_message, message_data_mode[3], id, 2, score);
+        sprintf(message, message_main_mode, id, 4, data_message);
+        tell_others_sth(MAX_PLAYER, message);
+        printf("player:%d guess right!\n", id);
+    }
+}
+
 void transmit_message(int id, char *data){
     char message[MAX_MES_LEN];
+    char data_message[MAX_DATA_MES_LEN];
 
-    //char data_message[MAX_DATA_MES_LEN];
-    //word judge
-    //sprintf(data_message, message_data_mode[1], id, data);
-
-    sprintf(message, message_main_mode, id, 2, data);
+    char *player_message = str_sub(data, 2);
+    if(strcmp(player_message, current_word) == 0){
+        strcpy(player_message, "*");
+        if(id != played_id){
+            game_right(id);
+        }
+    }
+    sprintf(data_message, message_data_mode[1], id, player_message);
+    sprintf(message, message_main_mode, id, 2, data_message);
     tell_others_sth(id, message);
     printf("player:%d message:%s\n", id, data);
+}
+
+void transmit_ink_data(int id, char *data){
+    char message[MAX_MES_LEN];
+    sprintf(message, message_main_mode, id, 3, data);
+    tell_others_sth(id, message);
+}
+
+void game_ready(int id){
+    char message[MAX_MES_LEN];
+    char data_message[MAX_DATA_MES_LEN];
+    char *ready_str = "ready";
+
+    players[id].state = ready;
+    sprintf(data_message, message_data_mode[3], id, 1, ready_str);
+    sprintf(message, message_main_mode, id, 4, data_message);
+    tell_others_sth(id, message);
+
+    int i;
+    int ready_num = 0;
+    for(i = 0; i < MAX_PLAYER; i++){
+        if(players[i].is_using == true){
+            if(players[i].state != ready){
+                return;
+            }
+            else{
+                ready_num++;
+            }
+        }
+    }
+
+    if(ready_num < 2) return;
+    
+    for(i = 0; i < MAX_PLAYER; i++){
+        if(players[i].is_using == true){
+            players[i].state = gaming;
+        }
+    }
+
+    int find_id = played_id;
+    for(i = 0; i < MAX_PLAYER; i++){
+        find_id = (find_id + 1) % 6;
+        if(players[find_id].is_using == true){
+            played_id = find_id;
+            break;
+        }
+    }
+
+    bzero(&message, sizeof(message));
+    bzero(data_message, sizeof(data_message));
+    strcpy(current_word, choose_word());
+    sprintf(data_message, message_data_mode[3], played_id, 1, current_word);
+    sprintf(message, message_main_mode, MAX_PLAYER, 4, data_message);
+    tell_others_sth(MAX_PLAYER, message);
+}
+
+void game_contral(int id, char *data){
+    int type = data[2] - '0';
+    char *mes = str_sub(data, 4);
+    switch(type){
+        case 1:game_ready(id); break;
+        default:break;
+    }
 }
 
 void execute_message(int id, char *message){
@@ -90,8 +176,8 @@ void execute_message(int id, char *message){
     char *data = str_sub(message, 4);
     switch(data_type){
         case 2:transmit_message(sourse_id, data); break;
-        case 3:break;   //ink_data
-        case 4:break;   //game_contral
+        case 3:transmit_ink_data(sourse_id, data); break;
+        case 4:game_contral(sourse_id, data); break;
         default:break;
     }
 }

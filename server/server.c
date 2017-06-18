@@ -2,15 +2,18 @@
 
 Player players[MAX_PLAYER];
 int report_fd;
+char current_word[20] = "";
 
 void *broadcast_response(void *arg);
 void *connect_client(void *arg);
 void set_report_fd();
 void processing_message(int id, char *message);
 void write_report(char *message);
+void get_words();
 
 int main(){
     set_report_fd();
+    get_words();
     
     pthread_t udp_thread_id;
     if(pthread_create(&udp_thread_id, NULL, broadcast_response, NULL) != 0){

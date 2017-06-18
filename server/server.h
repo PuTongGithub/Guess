@@ -16,7 +16,7 @@
 #define BROA_PORT 1106
 #define CONN_PORT 1107
 
-#define MAX_MES_LEN 1024
+#define MAX_MES_LEN 100000
 #define NAME_MAX_LEN 51
 #define MAX_DATA_MES_LEN (MAX_MES_LEN - 5)
 
