@@ -3,6 +3,7 @@
 extern Player players[MAX_PLAYER];
 extern char current_word[20];
 static int played_id = -1;
+static int gaming_num = 0;
 
 void write_report(char* message);
 char *choose_word();
@@ -76,6 +77,7 @@ void game_right(int id){
     char message[MAX_MES_LEN];
     char data_message[MAX_DATA_MES_LEN];
     char score[5];
+    static int right_num = 0;
 
     if(players[id].state == gaming){
         players[id].state = not_ready;
@@ -86,24 +88,42 @@ void game_right(int id){
         sprintf(message, message_main_mode, id, 4, data_message);
         tell_others_sth(MAX_PLAYER, message);
         printf("player:%d guess right!\n", id);
+        right_num++;
+
+        if(right_num >= gaming_num - 1){
+            bzero(message, sizeof(message));
+            bzero(data_message, sizeof(data_message));
+            sprintf(data_message, message_data_mode[3], id, 3, "end");
+            sprintf(message, message_main_mode, id, 4, data_message);
+            tell_others_sth(MAX_PLAYER, message);
+            printf("game over!\n");
+            gaming_num = 0;
+            right_num = 0;
+        }
     }
 }
 
 void transmit_message(int id, char *data){
     char message[MAX_MES_LEN];
     char data_message[MAX_DATA_MES_LEN];
+    bool is_right = false;
 
     char *player_message = str_sub(data, 2);
     if(strcmp(player_message, current_word) == 0){
         strcpy(player_message, "*");
         if(id != played_id){
-            game_right(id);
+            is_right = true;
         }
     }
+
     sprintf(data_message, message_data_mode[1], id, player_message);
     sprintf(message, message_main_mode, id, 2, data_message);
     tell_others_sth(id, message);
     printf("player:%d message:%s\n", id, data);
+
+    if(is_right){
+        game_right(id);        
+    }
 }
 
 void transmit_ink_data(int id, char *data){
@@ -116,6 +136,7 @@ void game_ready(int id){
     char message[MAX_MES_LEN];
     char data_message[MAX_DATA_MES_LEN];
     char *ready_str = "ready";
+    char word_data[31];
 
     players[id].state = ready;
     sprintf(data_message, message_data_mode[3], id, 1, ready_str);
@@ -140,22 +161,25 @@ void game_ready(int id){
     for(i = 0; i < MAX_PLAYER; i++){
         if(players[i].is_using == true){
             players[i].state = gaming;
+            gaming_num++;
         }
     }
 
     int find_id = played_id;
     for(i = 0; i < MAX_PLAYER; i++){
         find_id = (find_id + 1) % 6;
-        if(players[find_id].is_using == true){
+        if(players[find_id].is_using == true && players[find_id].state == gaming){
             played_id = find_id;
+            players[find_id].state = not_ready;
             break;
         }
     }
 
-    bzero(&message, sizeof(message));
+    bzero(message, sizeof(message));
     bzero(data_message, sizeof(data_message));
     strcpy(current_word, choose_word());
-    sprintf(data_message, message_data_mode[3], played_id, 1, current_word);
+    sprintf(word_data, "%s,%d", current_word, GAME_DURA);
+    sprintf(data_message, message_data_mode[3], played_id, 1, word_data);
     sprintf(message, message_main_mode, MAX_PLAYER, 4, data_message);
     tell_others_sth(MAX_PLAYER, message);
 }

@@ -1,0 +1,104 @@
+Mon Jun 19 09:47:22 2017
+    udp receive:aaa reply:0 ip:192.168.1.101
+Mon Jun 19 09:47:22 2017
+    tcp connect client. ip:192.168.1.101 id:0
+Mon Jun 19 09:47:22 2017
+    tcp send message to others. sourse:0 message:0&1&0#0#0#aaa^
+Mon Jun 19 09:47:25 2017
+    udp receive:bbb reply:1 ip:192.168.1.101
+Mon Jun 19 09:47:25 2017
+    tcp connect client. ip:192.168.1.101 id:1
+Mon Jun 19 09:47:25 2017
+    tcp send message to others. sourse:1 message:1&1&1#0#0#bbb^
+Mon Jun 19 09:47:25 2017
+    tcp send message to someone. target:1 message:1&1&0#0#0#aaa^
+Mon Jun 19 09:47:28 2017
+    tcp send message to others. sourse:0 message:0&4&0#1#ready^
+Mon Jun 19 09:47:30 2017
+    tcp send message to others. sourse:1 message:1&4&1#1#ready^
+Mon Jun 19 09:47:30 2017
+    tcp send message to others. sourse:6 message:6&4&0#1#公牛,60^
+Mon Jun 19 09:47:33 2017
+    tcp send message to others. sourse:0 message:0&3&0#AMwBAwZIEEU1RjURAACAPx8JEQAAAAAAAPA/CrEBYofzJ4eZSeAQGATK0zKAQGYwFMrPMiZzKZzKazSZoDAIDAJlM4DAEBgCAwCAzSATeATITOzTNNJqmkBmc0gMAQGATKazRM5kAJlM00msymc0msyTOaTWZQCAwACH8MrHhlZEymc0msymc0gMAmtmmM1tE1mkzmU1mk1mgmdmmYQGbTUgMAACazQms0JrNEzmSAzGZE1mkzmExmU1mkzgMAmExgMAgMzmkBmc0msygEBA^
+Mon Jun 19 09:47:34 2017
+    tcp send message to others. sourse:0 message:0&3&0#AM8CAwZIEEU1RjURAACAPx8JEQAAAAAAAPA/CrEBYofzJ4eZSeAQGATK0zKAQGYwFMrPMiZzKZzKazSZoDAIDAJlM4DAEBgCAwCAzSATeATITOzTNNJqmkBmc0gMAQGATKazRM5kAJlM00msymc0msyTOaTWZQCAwACH8MrHhlZEymc0msymc0gMAmtmmM1tE1mkzmU1mk1mgmdmmYQGbTUgMAACazQms0JrNEzmSAzGZE1mkzmExmU1mkzgMAmExgMAgMzmkBmc0msygEBACoABPofxEweImGaTVMpnMoBAZpM5kgMATSazJAIDNJrNCZTOZTOZQCAzSaoBMJjMJjAU0tMyTNMpmmsAgMAgMzmUzIfwwoeGB2ZzKAQGATKa2qbzGzTMmUzCZTOaTVAZtNZlM5lM5pAZnMoBNZlM5lM5pNYDABM5hAJnAZpM5lNYBAQ=^
+Mon Jun 19 09:47:38 2017
+    tcp send message to others. sourse:1 message:1&2&1#*^
+Mon Jun 19 09:47:38 2017
+    tcp send message to others. sourse:6 message:1&4&1#2#1^
+Mon Jun 19 09:47:38 2017
+    tcp send message to others. sourse:6 message:1&4&1#3#end^
+Mon Jun 19 09:47:42 2017
+    tcp send message to others. sourse:1 message:1&4&1#1#ready^
+Mon Jun 19 09:47:43 2017
+    tcp send message to others. sourse:0 message:0&4&0#1#ready^
+Mon Jun 19 09:47:43 2017
+    tcp send message to others. sourse:6 message:6&4&1#1#金丝猴,60^
+Mon Jun 19 09:47:45 2017
+    tcp send message to others. sourse:1 message:1&3&1#ANsBAwZIEEU1RjURAACAPx8JEQAAAAAAAPA/CsABY4fw/zeHxXEEwgCazOZJnMpnAYBNYBMprM4DNprNZpNYBAUzmkBmaazQmsAmU1gEBgEymqATKawCZTW1WuaAgM2mqZTOZTNMoBNZlM0ymc0gKZzSazKZzKATWZJnNJrMkzmgh/F9V4vqwBNJrMpnNJrMoBNZlAJrMkzmkBgE1mUzmkBgE1mUAmqZTOZQCazKZzSAwCa2i0zKAQGATWZIBNZlAJrMoBNZlM5pNUymZNJqATWaTOZTWATKazO0WmaA^
+Mon Jun 19 09:47:46 2017
+    tcp send message to others. sourse:1 message:1&3&1#AIADAwZIEEU1RjURAACAPx8JEQAAAAAAAPA/CsABY4fw/zeHxXEEwgCazOZJnMpnAYBNYBMprM4DNprNZpNYBAUzmkBmaazQmsAmU1gEBgEymqATKawCZTW1WuaAgM2mqZTOZTNMoBNZlM0ymc0gKZzSazKZzKATWZJnNJrMkzmgh/F9V4vqwBNJrMpnNJrMoBNZlAJrMkzmkBgE1mUzmkBgE1mUAmqZTOZQCazKZzSAwCa2i0zKAQGATWZIBNZlAJrMoBNZlM5pNUymZNJqATWaTOZTWATKazO0WmaACqIBWofx1IeO2WZTGYTOaIDNJnMkzs0zQCYQCazKATKawCZJrNAJpNZlAIDNJnMoDAJnZoBAZnMppM5hAJnMJta7RM0ymcygE1mUzmUztFrm01gMAJrNJrAJrMpmAIfw1LeGmOaBNZoJrNCazQAQGATSapkmc0mExgMAgM0TWaTWaCAzGZQGATOYTGAwCYTGazJM5pNSAzGZTWaTOAwCaplMwEzA^
+Mon Jun 19 09:47:53 2017
+    tcp send message to others. sourse:0 message:0&2&0#*^
+Mon Jun 19 09:47:53 2017
+    tcp send message to others. sourse:6 message:0&4&0#2#1^
+Mon Jun 19 09:47:53 2017
+    tcp send message to others. sourse:6 message:0&4&0#3#end^
+Mon Jun 19 09:48:00 2017
+    udp receive:ccc reply:2 ip:192.168.1.101
+Mon Jun 19 09:48:00 2017
+    tcp connect client. ip:192.168.1.101 id:2
+Mon Jun 19 09:48:00 2017
+    tcp send message to others. sourse:2 message:2&1&2#0#0#ccc^
+Mon Jun 19 09:48:00 2017
+    tcp send message to someone. target:2 message:2&1&0#0#1#aaa^
+Mon Jun 19 09:48:00 2017
+    tcp send message to someone. target:2 message:2&1&1#0#1#bbb^
+Mon Jun 19 09:48:01 2017
+    tcp send message to others. sourse:2 message:2&4&2#1#ready^
+Mon Jun 19 09:48:01 2017
+    tcp send message to others. sourse:0 message:0&4&0#1#ready^
+Mon Jun 19 09:48:03 2017
+    tcp send message to others. sourse:1 message:1&4&1#1#ready^
+Mon Jun 19 09:48:03 2017
+    tcp send message to others. sourse:6 message:6&4&2#1#高尔夫球杆,60^
+Mon Jun 19 09:48:06 2017
+    tcp send message to others. sourse:2 message:2&3&2#ANMDAwZIEEU1RjURAACAPx8JEQAAAAAAAPA/CrgD8QGH8vQ3l67TKazSZwGaTOAwCZWmZTSZzW0TOa2iazO0TOAwCAzSZzKazRM5kAJlM00gMzmk1mUAgMzmkBgEBgEBQCZTWaTOZIDNoDM5lAIDAJhMZlNZoTWaIDACazQmsAgKAQGZhNUAgMzBabRZ5hZ5kmc1mUxmEzmaZLTNJrM5lAIDM5laZpMpnMpmmUzmSaWm0QGATW0TOZTOZTSappAYAgM0mcyJpNS0WmaQGAQGAQGaTOZTWaAJpNZlM5pAYBNZlNJnAUAgMAmVptE1gEBgEwmMBgEBgEBgEBgE1mSAAIfyAAeQAFMkAmsygEymsAmU1miazQCa2q1zQJrNJrNJnAZpM4DAICgEBmc0gMAgMAmsymc0gMAmqZTOZTMmk1AE1mkzms0gMzEAm80maazKZwCApnAZtN4AgMAIDAEBgCAzGzTOa2iZzWaQGATW1WuZTGYQBNZogMATW0EAmEzmkyE0msygEymcyms0JpNZlM7RNYBAZomcygMACZTOaTWZTOZQCAoBAYBAbRZ5hMZlAYBM5hMZlNZpNYBAUAgMzmUzCazSZwGaTOAwCAzOaTWZJmTSagA=^
+Mon Jun 19 09:48:12 2017
+    tcp send message to others. sourse:1 message:1&2&1#*^
+Mon Jun 19 09:48:12 2017
+    tcp send message to others. sourse:6 message:1&4&1#2#2^
+Mon Jun 19 09:48:18 2017
+    tcp send message to others. sourse:0 message:0&2&0#*^
+Mon Jun 19 09:48:18 2017
+    tcp send message to others. sourse:6 message:0&4&0#2#2^
+Mon Jun 19 09:48:18 2017
+    tcp send message to others. sourse:6 message:0&4&0#3#end^
+Mon Jun 19 09:48:21 2017
+    tcp send message to others. sourse:2 message:2&4&2#1#ready^
+Mon Jun 19 09:48:21 2017
+    tcp send message to others. sourse:0 message:0&4&0#1#ready^
+Mon Jun 19 09:48:22 2017
+    tcp send message to others. sourse:1 message:1&4&1#1#ready^
+Mon Jun 19 09:48:22 2017
+    tcp send message to others. sourse:6 message:6&4&0#1#犀牛,60^
+Mon Jun 19 09:48:24 2017
+    tcp send message to others. sourse:0 message:0&3&0#ACUDBkgQRTVGNREAAIA/HwkRAAAAAAAA8D8KCwIPScyTmA9K5JVc^
+Mon Jun 19 09:48:27 2017
+    tcp send message to others. sourse:0 message:0&2&0#*^
+Mon Jun 19 09:48:30 2017
+    tcp send message to others. sourse:1 message:1&2&1#*^
+Mon Jun 19 09:48:30 2017
+    tcp send message to others. sourse:6 message:1&4&1#2#3^
+Mon Jun 19 09:48:35 2017
+    tcp send message to others. sourse:2 message:2&2&2#*^
+Mon Jun 19 09:48:35 2017
+    tcp send message to others. sourse:6 message:2&4&2#2#1^
+Mon Jun 19 09:48:35 2017
+    tcp send message to others. sourse:6 message:2&4&2#3#end^
+Mon Jun 19 09:48:39 2017
+    tcp send message to others. sourse:2 message:0&5&2#bye^
+Mon Jun 19 09:48:41 2017
+    tcp send message to others. sourse:1 message:0&5&1#bye^
+Mon Jun 19 09:48:43 2017
+    tcp send message to others. sourse:0 message:0&5&0#bye^
