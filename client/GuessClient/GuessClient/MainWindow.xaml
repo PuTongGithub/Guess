@@ -49,7 +49,6 @@
                            FontSize="20"
                            HorizontalAlignment="Center"
                            Foreground="Gray"
-                           Text="Do not use special characters like ^ : % # &amp; &quot;"
                            Visibility="Hidden"
                            />
                 <Button Name="name_confirm_button"

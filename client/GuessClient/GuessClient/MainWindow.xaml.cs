@@ -363,6 +363,7 @@ namespace Guess
 
         private void send_message()
         {
+            if (message_input_box.Text == "") return;
             if (message_input_box.Text == guess_word)
             {
                 message_record_block.Text += my_name + ":*\n";
@@ -382,6 +383,13 @@ namespace Guess
             char[] bad_ch = new char[6] { '^', '%', '&', '#', '"', ':' };
             if (user_name_input_box.Text.IndexOfAny(bad_ch) != -1)
             {
+                error_hint_block.Text = "Do not use special characters like ^ : % # & \"";
+                error_hint_block.Visibility = Visibility.Visible;
+                user_name_input_box.Text = "";
+            }
+            else if(user_name_input_box.Text == "")
+            {
+                error_hint_block.Text = "Name cannot be empty";
                 error_hint_block.Visibility = Visibility.Visible;
                 user_name_input_box.Text = "";
             }
