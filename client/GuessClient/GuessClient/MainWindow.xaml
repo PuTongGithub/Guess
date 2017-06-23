@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Guess"
         mc:Ignorable="d"
         Closing="Window_Closing"
-        Title="MainWindow" Height="800" Width="1200" WindowStyle="ThreeDBorderWindow">
+        Title="Guess" Height="700" Width="1100" WindowStyle="ThreeDBorderWindow">
     <Window.Resources>
         <Style TargetType="StackPanel" x:Key="user_info_stack_style">
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -101,14 +101,16 @@
                            Grid.Column="1"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           FontSize="30"
+                           FontSize="26"
+                           Margin="0,0,10,0"
                            />
                 <Ellipse Grid.Column="1"
-                         Height="60"
-                         Width="60"
+                         Height="50"
+                         Width="50"
                          Stretch="Uniform"
                          Stroke="Black"
                          StrokeThickness="5"
+                         Margin="0,0,10,0"
                          />
             </Grid>
 
@@ -269,7 +271,7 @@
                 <ScrollViewer Name="message_record_scrollviewer">
                     <TextBlock Name="message_record_block"
                                TextWrapping="Wrap"
-                               FontSize="30"
+                               FontSize="27"
                                Margin="10,0,0,0"
                                />
                 </ScrollViewer>
