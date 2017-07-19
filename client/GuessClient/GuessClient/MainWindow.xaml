@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Guess"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Closing="Window_Closing"
         Title="Guess" Height="700" Width="1100" WindowStyle="ThreeDBorderWindow">
     <Window.Resources>

@@ -96,6 +96,7 @@ namespace Guess
                 }
             }
             message_record_block.Text += "---游戏结束！---\n";
+            message_record_block.Text += "正确答案是：" + guess_word + '\n';
             is_drawing = false;
             ready_button.Visibility = Visibility.Visible;
             ink_canvas.EditingMode = InkCanvasEditingMode.None;
